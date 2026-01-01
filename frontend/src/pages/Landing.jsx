@@ -80,11 +80,11 @@ const Landing = () => {
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-16 md:py-24">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
+          <div className="space-y-8 animate-slide-in-left">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full">
-              <span className="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></span>
-              <span className="font-semibold text-sm">India's Most Trusted Ride Service</span>
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 px-5 py-2.5 rounded-full border border-blue-200 shadow-sm hover:shadow-md transition-all">
+              <span className="w-2 h-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full animate-pulse"></span>
+              <span className="font-semibold text-sm">🏆 India's Most Trusted Ride Service</span>
             </div>
 
             {/* Main Heading */}
@@ -106,16 +106,17 @@ const Landing = () => {
               <Button 
                 size="lg" 
                 onClick={() => navigate('/customer/login')}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-lg h-16 px-8 shadow-lg hover:shadow-xl transition-all"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-lg h-16 px-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 font-semibold"
               >
                 <Phone className="mr-2 h-6 w-6" />
                 Book a Ride Now
+                <span className="ml-2 text-xl">→</span>
               </Button>
               <Button 
                 size="lg" 
                 variant="outline"
                 onClick={() => navigate('/driver/login')}
-                className="text-lg h-16 px-8 border-2 hover:bg-gray-50"
+                className="text-lg h-16 px-8 border-2 border-purple-200 hover:bg-gradient-to-r hover:from-purple-50 hover:to-blue-50 hover:border-purple-300 transition-all duration-300 font-semibold"
               >
                 <Users className="mr-2 h-6 w-6" />
                 Become a Driver
@@ -123,20 +124,18 @@ const Landing = () => {
             </div>
 
             {/* Stats */}
-            <div className="flex items-center gap-8 pt-4">
-              <div className="text-center">
+            <div className="grid grid-cols-3 gap-6 pt-4">
+              <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                 <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">50K+</div>
-                <div className="text-sm text-gray-600 font-medium">Happy Riders</div>
+                <div className="text-sm text-gray-700 font-semibold mt-1">😊 Happy Riders</div>
               </div>
-              <div className="w-px h-12 bg-gray-300"></div>
-              <div className="text-center">
+              <div className="text-center p-4 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                 <div className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">2K+</div>
-                <div className="text-sm text-gray-600 font-medium">Drivers</div>
+                <div className="text-sm text-gray-700 font-semibold mt-1">🚗 Drivers</div>
               </div>
-              <div className="w-px h-12 bg-gray-300"></div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-yellow-500">4.8★</div>
-                <div className="text-sm text-gray-600 font-medium">Rating</div>
+              <div className="text-center p-4 bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                <div className="text-4xl font-bold text-yellow-600">4.8★</div>
+                <div className="text-sm text-gray-700 font-semibold mt-1">⭐ Rating</div>
               </div>
             </div>
 
@@ -154,24 +153,24 @@ const Landing = () => {
           </div>
           
           {/* Hero Image */}
-          <div className="relative">
-            <div className="relative z-10">
+          <div className="relative animate-slide-in-right">
+            <div className="relative z-10 hover:scale-105 transition-transform duration-500">
               <img 
                 src="/assets/taxidriver.png" 
                 alt="Professional Driver" 
-                className="rounded-3xl shadow-2xl w-full h-auto"
+                className="rounded-3xl shadow-2xl w-full h-auto border-4 border-white"
               />
             </div>
             
             {/* Floating Card */}
-            <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-2xl z-20 max-w-xs border-2 border-blue-100">
+            <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-2xl z-20 max-w-xs border-2 border-green-100 animate-pulse-glow hover:scale-105 transition-transform duration-300">
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center">
+                <div className="w-14 h-14 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center shadow-lg">
                   <Shield className="w-7 h-7 text-white" />
                 </div>
                 <div>
-                  <div className="font-bold text-lg">100% Verified</div>
-                  <div className="text-sm text-gray-600">All Drivers & Safe Rides</div>
+                  <div className="font-bold text-lg flex items-center gap-2">✓ 100% Verified</div>
+                  <div className="text-sm text-gray-600 font-medium">All Drivers & Safe Rides</div>
                 </div>
               </div>
             </div>
@@ -192,12 +191,12 @@ const Landing = () => {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl flex items-center justify-center mb-4 text-blue-600">
+              <Card key={index} className="p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-2 hover:border-blue-200 bg-gradient-to-br from-white to-blue-50 group cursor-pointer">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mb-4 text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <h3 className="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors">{feature.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
               </Card>
             ))}
           </div>
